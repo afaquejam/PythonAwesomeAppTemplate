@@ -1,0 +1,2 @@
+#!/usr/bin/env python3
+from {{cookiecutter.package_name}}.{{cookiecutter.module_name}} import {{cookiecutter.class_name}}
