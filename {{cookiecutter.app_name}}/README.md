@@ -19,10 +19,10 @@
 
   `make test`
   
-* If you'd like to upgrade the project's dependencies:
+* Generate, view test-reports & code-coverage reports (assuming `firefox` is pre-installed):
 
-  `make upgrade-dependencies`
+  `make test_report`
 
-* Turn off the Python VirtualEnv.
+* Turn off the Python virtualenv.
 
   `deactivate`

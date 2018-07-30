@@ -9,8 +9,11 @@ test_report:
 	python3 -m pytest --cov-config .coveragerc --cov-report html:reports/{{cookiecutter.package_name}} --cov={{cookiecutter.package_name}}
 	-firefox reports/{{cookiecutter.package_name}}/index.html &
 
+freeze-dependencies:
+	pip3 freeze > requirements.txt
+
 upgrade-dependencies:
-	pip freeze — local | grep -v ‘^\-e’ | cut -d = -f 1 | xargs -n1 pip install -U
+	pip3 install -r requirements-to-freeze.txt --upgrade
 
 clean:
 	-find . -name "*.log" -delete
@@ -20,5 +23,5 @@ clean:
 	-rm -rf reports
 	-rm -rf {{cookiecutter.app_name}}.spec build dist
 
-hard-clean:
+hard-clean: clean
 	-rm -rf virtualenv
